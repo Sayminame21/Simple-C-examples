@@ -2,11 +2,13 @@
 
 #include <stdio.h>
 
+ int total [5]; /*Array is created*/
+ int Total;
+ int average;
+
 int main(void)
 {
-    int total [5]; /*Array is created*/
-    int Total;
-    int average;
+   
 
     total[0] = 2;
     total[1] = 4;
