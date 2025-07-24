@@ -5,10 +5,12 @@ length of 2.3 inches?*/
 
 #include <stdio.h>
 
+ int area,perimeter,width,height;  /*declaration of integers variables*/
+ float area_2,perimeter_2,width_2,height_2;/*declaration of floating point variables*/
+
 int main(void)
 {
-    int area,perimeter,width,height;  /*declaration of integers variables*/
-    float area_2,perimeter_2,width_2,height_2;/*declaration of floating point variables*/
+   
 
     width = 3;
     height = 5;
