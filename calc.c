@@ -10,15 +10,12 @@ long int result;
 int main(void){
 	result= 0;
 	printf("The result is :%ld\n",value); //the starting point
-	
+
+	printf(" press q to quit/n"); //quits program
 	printf("insert value and operator:\n"); //display input message
-	printf("or press q to quit");
 	fgets(line,sizeof(line),stdin); // input value
 	sscanf(line,"%ld%c",&value,&operator);
 
-	printf("insert value\n"); //display input message
-	fgets(line,sizeof(line),stdin); // input value
-	sscanf(line,"%ld",&value_2);
 
 	while(1){
 		if(value == 'q'){
@@ -26,24 +23,27 @@ int main(void){
 		}
 
 			if(operator == '+'){ //used to input the addition operator
-			result=value+value_2;
+			result+=value;
 			printf("the result is: %ld\n",result);
 		}
 			if(operator == '-'){ //used to input the subtraction operator 
-			result=value-value_2;
+			result-=value;
 			printf("the result is:%ld\n",result);
 		}
 			if(operator == '*'){ //used to input the multiplication operator
-			result=value*value_2;
+			result*=value;
 			printf("the result is :%ld\n",result);
 		}
-			if(operator == '/'){ //used to input the division operator
-				if(value == 0 & value_2 == 0){
+			if(operator /= '/'){ //used to input the division operator
+				if(value <= 0 ){
 					printf("error detected");
+					break;
 				}
-			result=value/value_2;
+			result/=value;
 			printf("the result is %d\n",result);
 		}
+		printf("result is :%ld\n",result);
+		continue;
 
 		return (0);
 	}
