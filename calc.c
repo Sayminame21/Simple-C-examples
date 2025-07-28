@@ -10,7 +10,9 @@ long int result;
 int main(void){
 	result= 0;
 	printf("The result is :%ld\n",value); //the starting point
+	
 	printf("insert value and operator:\n"); //display input message
+	printf("or press q to quit);
 	fgets(line,sizeof(line),stdin); // input value
 	sscanf(line,"%ld%c",&value,&operator);
 
@@ -19,7 +21,11 @@ int main(void){
 	sscanf(line,"%ld",&value_2);
 
 	while(1){
-		if(operator == '+'){ //used to input the addition operator
+		if(value == 'q'){
+			break;
+		}
+
+			if(operator == '+'){ //used to input the addition operator
 			result=value+value_2;
 			printf("the result is: %ld\n",result);
 		}
