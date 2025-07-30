@@ -2,55 +2,50 @@
 #include <string.h>
 
 char line[100];
-long int value;
-long int value_2;
+int value;
 char operator;
-long int result;
+int result;
 
 int main(void){
-	result= 0;
-	printf("The result is :%ld\n",value); //the starting point
 
-	printf(" press q to quit/n"); //quits program
-	printf("insert value and operator:\n"); //display input message
-	fgets(line,sizeof(line),stdin); // input value
-	sscanf(line,"%ld%c",&value,&operator);
-
+	result = 0; //program begins with the expression 0
 
 	while(1){
+
+        printf("the result is %d\n",result); // input results
+		printf("input the value and operator\n"); //input value and operator
+		
+		fgets(line,sizeof(line),stdin);
+		sscanf(line,"%d %c",&value,&operator);
+
 		if(value == 'q'){
 			break;
 		}
-
-			if(operator == '+'){ //used to input the addition operator
+		switch(operator){  //addition operator
+			case '+' :
 			result+=value;
-			printf("the result is: %ld\n",result);
+			break; 
 		}
-			if(operator == '-'){ //used to input the subtraction operator 
+		switch(operator){ //subtraction  operator
+			case '-' :
 			result-=value;
-			printf("the result is:%ld\n",result);
+			break; 
+
 		}
-			if(operator == '*'){ //used to input the multiplication operator
-			result*=value;
-			printf("the result is :%ld\n",result);
-		}
-			if(operator /= '/'){ //used to input the division operator
-				if(value <= 0 ){
-					printf("error detected");
-					break;
-				}
+		switch(operator){ //divison operator
+			case '/' :
 			result/=value;
-			printf("the result is %d\n",result);
+			break; 
 		}
-		printf("result is :%ld\n",result);
-		continue;
-
-		return (0);
+		switch(operator){  // multiplication operator
+			case '*' :
+			result*=value;
+			break; 
+		}
 	}
-
-
-
-
+    printf("the result is %d/n",result);
 
 
 }
+
+
