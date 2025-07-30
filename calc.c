@@ -1,3 +1,5 @@
+/*This a four function calculctor that adds,subtracts,divides and multiplies values*/ 
+
 #include <stdio.h>
 #include <string.h>
 
